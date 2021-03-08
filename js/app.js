@@ -8,22 +8,22 @@ let Seattle={
     mincust:23,
     maxcust:65,
     avgcookiessale:6.3,
-    workinghours:['6am:','7am:','8am:','9am:','10am:','11am:','12pm:','1pm:','2pm:','3pm:','4pm:','5pm:','6pm:','7pm:','8pm:'],
+    workinghours:['6am:','7am:','8am:','9am:','10am:','11am:','12pm:','1pm:','2pm:','3pm:','4pm:','5pm:','6pm:','7pm:',],
     sale:function getRandomInt(min, max) {
         min = Math.ceil(min);
         max = Math.floor(max);
-        return a=Math.floor(Math.random() * (this.maxcust - this.mincust) + this.mincust)*this.avgcookiessale; 
+        return a=Math.floor(Math.random() * (this.maxcust*this.avgcookiessale - this.mincust*this.avgcookiessale) + this.mincust*this.avgcookiessale); 
     }
       
 }
 
 document.write('<h3>Seattle</h3>');
 
-while ( i <= 14) {
+while ( i < 14) {
     let arr=[];
     Seattle.sale();
     arr=[Seattle.sale()]
-    document.write('<ul>' +Seattle.workinghours[i]+arr+'</ul>');
+    document.write('<ul>' +Seattle.workinghours[i]+arr+' cookies.'+'</ul>');
     i++
 };
 
@@ -37,7 +37,7 @@ let Tokyo={
     mincust:3,
     maxcust:24,
     avgcookiessale:1.2,
-    workinghours:['6am:','7am:','8am:','9am:','10am:','11am:','12pm:','1pm:','2pm:','3pm:','4pm:','5pm:','6pm:','7pm:','8pm:'],
+    workinghours:['6am:','7am:','8am:','9am:','10am:','11am:','12pm:','1pm:','2pm:','3pm:','4pm:','5pm:','6pm:','7pm:'],
     sale:function getRandomInt(min, max) {
         min = Math.ceil(min);
         max = Math.floor(max);
@@ -45,7 +45,7 @@ let Tokyo={
     }
 
 }
-while ( i <= 14) {
+while ( i < 14) {
     let tarr=[];
     Tokyo.sale();
     tarr=[Tokyo.sale()]
@@ -59,7 +59,7 @@ let Dubai={
     mincust:11,
     maxcust:38,
     avgcookiessale:3.7,
-    workinghours:['6am:','7am:','8am:','9am:','10am:','11am:','12pm:','1pm:','2pm:','3pm:','4pm:','5pm:','6pm:','7pm:','8pm:'],
+    workinghours:['6am:','7am:','8am:','9am:','10am:','11am:','12pm:','1pm:','2pm:','3pm:','4pm:','5pm:','6pm:','7pm:'],
     sale:function getRandomInt(min, max) {
         min = Math.ceil(min);
         max = Math.floor(max);
@@ -68,7 +68,7 @@ let Dubai={
 
 }
 
-while ( i <= 14) {
+while ( i < 14) {
     let darr=[];
     Tokyo.sale();
     darr=[Dubai.sale()]
@@ -81,7 +81,7 @@ let Paris={
     mincust:20,
     maxcust:38,
     avgcookiessale:2.3,
-    workinghours:['6am:','7am:','8am:','9am:','10am:','11am:','12pm:','1pm:','2pm:','3pm:','4pm:','5pm:','6pm:','7pm:','8pm:'],
+    workinghours:['6am:','7am:','8am:','9am:','10am:','11am:','12pm:','1pm:','2pm:','3pm:','4pm:','5pm:','6pm:','7pm:'],
     sale:function getRandomInt(min, max) {
         min = Math.ceil(min);
         max = Math.floor(max);
@@ -89,7 +89,7 @@ let Paris={
     }
 
 }
-while ( i <= 14) {
+while ( i < 14) {
     let parr=[];
     Paris.sale();
     parr=[Paris.sale()]
@@ -103,7 +103,7 @@ let Lima={
     mincust:2,
     maxcust:16,
     avgcookiessale:4.6,
-    workinghours:['6am:','7am:','8am:','9am:','10am:','11am:','12pm:','1pm:','2pm:','3pm:','4pm:','5pm:','6pm:','7pm:','8pm:'],
+    workinghours:['6am:','7am:','8am:','9am:','10am:','11am:','12pm:','1pm:','2pm:','3pm:','4pm:','5pm:','6pm:','7pm:'],
     sale:function getRandomInt(min, max) {
         min = Math.ceil(min);
         max = Math.floor(max);
@@ -111,7 +111,7 @@ let Lima={
     }
 
 }
-while ( i <= 14) {
+while ( i < 14) {
     let larr=[];
     Lima.sale();
     parr=[Lima.sale()]
