@@ -41,7 +41,7 @@ let Tokyo={
     sale:function getRandomInt(min, max) {
         min = Math.ceil(min);
         max = Math.floor(max);
-        return a=Math.floor(Math.random() * (this.maxcust - this.mincust) + this.mincust)*this.avgcookiessale; 
+        return a=Math.floor(Math.random() * (this.maxcust*this.avgcookiessale - this.mincust*this.avgcookiessale) + this.mincust)*this.avgcookiessale; 
     }
 
 }
@@ -49,7 +49,7 @@ while ( i < 14) {
     let tarr=[];
     Tokyo.sale();
     tarr=[Tokyo.sale()]
-    document.write('<ul>' +Tokyo.workinghours[i]+tarr+'</ul>');
+    document.write('<ul>' +Tokyo.workinghours[i]+tarr+' cookies.'+'</ul>');
     i++
 };
 
@@ -63,7 +63,7 @@ let Dubai={
     sale:function getRandomInt(min, max) {
         min = Math.ceil(min);
         max = Math.floor(max);
-        return a=Math.floor(Math.random() * (this.maxcust - this.mincust) + this.mincust)*this.avgcookiessale; 
+        return a=Math.floor(Math.random() * (this.maxcust*this.avgcookiessale - this.mincust*this.avgcookiessale) + this.mincust*this.avgcookiessale); 
     }
 
 }
@@ -72,7 +72,7 @@ while ( i < 14) {
     let darr=[];
     Tokyo.sale();
     darr=[Dubai.sale()]
-    document.write('<ul>' +Dubai.workinghours[i]+darr+'</ul>');
+    document.write('<ul>' +Dubai.workinghours[i]+darr+' cookies.'+'</ul>');
     i++
 };
 
@@ -85,7 +85,7 @@ let Paris={
     sale:function getRandomInt(min, max) {
         min = Math.ceil(min);
         max = Math.floor(max);
-        return a=Math.floor(Math.random() * (this.maxcust - this.mincust) + this.mincust)*this.avgcookiessale; 
+        return a=Math.floor(Math.random() * (this.maxcust*this.avgcookiessale - this.mincust*this.avgcookiessale) + this.mincust*this.avgcookiessale); 
     }
 
 }
@@ -93,7 +93,7 @@ while ( i < 14) {
     let parr=[];
     Paris.sale();
     parr=[Paris.sale()]
-    document.write('<ul>' +Paris.workinghours[i]+parr+'</ul>');
+    document.write('<ul>' +Paris.workinghours[i]+parr+' cookies.'+'</ul>');
     i++
 };
 
@@ -107,7 +107,7 @@ let Lima={
     sale:function getRandomInt(min, max) {
         min = Math.ceil(min);
         max = Math.floor(max);
-        return a=Math.floor(Math.random() * (this.maxcust - this.mincust) + this.mincust)*this.avgcookiessale; 
+        return a=Math.floor(Math.random() * (this.maxcust*this.avgcookiessale - this.mincust*this.avgcookiessale) + this.mincust*this.avgcookiessale); 
     }
 
 }
@@ -115,7 +115,7 @@ while ( i < 14) {
     let larr=[];
     Lima.sale();
     parr=[Lima.sale()]
-    document.write('<ul>' +Lima.workinghours[i]+larr+'</ul>');
+    document.write('<ul>' +Lima.workinghours[i]+larr+' cookies.'+'</ul>');
     i++
 };
 
