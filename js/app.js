@@ -1,7 +1,7 @@
 'use srtict';
 
 let main= document.getElementById('salmon');
-let ul= document.getElementById('list');
+
 let i=0;
 
 let Seattle={
@@ -12,7 +12,7 @@ let Seattle={
     sale:function getRandomInt(min, max) {
         min = Math.ceil(min);
         max = Math.floor(max);
-        return a=Math.floor(Math.random() * (this.maxcust*this.avgcookiessale - this.mincust*this.avgcookiessale) + this.mincust*this.avgcookiessale); 
+        return Math.floor(Math.random() * (this.maxcust*this.avgcookiessale - this.mincust*this.avgcookiessale) + this.mincust*this.avgcookiessale); 
     }
       
 }
@@ -24,13 +24,13 @@ while ( i < 14) {
     Seattle.sale();
     arr=[Seattle.sale()]
     document.write('<ul>' +Seattle.workinghours[i]+arr+' cookies.'+'</ul>');
+
     i++
 };
 
 
 
-
-
+document.write('<h3>Tokyo</h3>');
 
 
 let Tokyo={
@@ -41,18 +41,20 @@ let Tokyo={
     sale:function getRandomInt(min, max) {
         min = Math.ceil(min);
         max = Math.floor(max);
-        return a=Math.floor(Math.random() * (this.maxcust*this.avgcookiessale - this.mincust*this.avgcookiessale) + this.mincust)*this.avgcookiessale; 
+        return Math.floor(Math.random() * (this.maxcust*this.avgcookiessale - this.mincust*this.avgcookiessale) + this.mincust*this.avgcookiessale); 
     }
 
 }
-while ( i < 14) {
+let a=0;
+while ( a< 14) {
     let tarr=[];
     Tokyo.sale();
     tarr=[Tokyo.sale()]
-    document.write('<ul>' +Tokyo.workinghours[i]+tarr+' cookies.'+'</ul>');
-    i++
+    document.write('<ul>' +Tokyo.workinghours[a]+tarr+' cookies.'+'</ul>');
+    a++
 };
 
+document.write('<h3>Dubai</h3>');
 
 let Dubai={
     branchname:'dubai',
@@ -63,19 +65,22 @@ let Dubai={
     sale:function getRandomInt(min, max) {
         min = Math.ceil(min);
         max = Math.floor(max);
-        return a=Math.floor(Math.random() * (this.maxcust*this.avgcookiessale - this.mincust*this.avgcookiessale) + this.mincust*this.avgcookiessale); 
+        return Math.floor(Math.random() * (this.maxcust*this.avgcookiessale- this.mincust*this.avgcookiessale) + this.mincust*this.avgcookiessale); 
     }
 
 }
-
-while ( i < 14) {
+let b=0
+while ( b < 14) {
     let darr=[];
     Tokyo.sale();
     darr=[Dubai.sale()]
-    document.write('<ul>' +Dubai.workinghours[i]+darr+' cookies.'+'</ul>');
-    i++
+    document.write('<ul>' +Dubai.workinghours[b]+darr+' cookies.'+'</ul>');
+
+    b++
 };
 
+
+document.write('<h3>Paris</h3>');
 let Paris={
     branchname:'paris',
     mincust:20,
@@ -85,18 +90,22 @@ let Paris={
     sale:function getRandomInt(min, max) {
         min = Math.ceil(min);
         max = Math.floor(max);
-        return a=Math.floor(Math.random() * (this.maxcust*this.avgcookiessale - this.mincust*this.avgcookiessale) + this.mincust*this.avgcookiessale); 
+        return Math.floor(Math.random() * (this.maxcust*this.avgcookiessale - this.mincust*this.avgcookiessale) + this.mincust*this.avgcookiessale); 
     }
 
 }
-while ( i < 14) {
+let c=0
+while ( c < 14) {
     let parr=[];
     Paris.sale();
     parr=[Paris.sale()]
-    document.write('<ul>' +Paris.workinghours[i]+parr+' cookies.'+'</ul>');
-    i++
+    document.write('<ul>' +Paris.workinghours[c]+parr+' cookies.'+'</ul>');
+    console.log(Paris.workinghours[i]);
+    c++
 };
 
+
+document.write('<h3>Lima</h3>');
 
 let Lima={
     branchname:'lima',
@@ -107,15 +116,16 @@ let Lima={
     sale:function getRandomInt(min, max) {
         min = Math.ceil(min);
         max = Math.floor(max);
-        return a=Math.floor(Math.random() * (this.maxcust*this.avgcookiessale - this.mincust*this.avgcookiessale) + this.mincust*this.avgcookiessale); 
+        return Math.floor(Math.random() * (this.maxcust*this.avgcookiessale - this.mincust*this.avgcookiessale) + this.mincust*this.avgcookiessale); 
     }
 
 }
-while ( i < 14) {
+let d=0
+while ( d< 14) {
     let larr=[];
     Lima.sale();
-    parr=[Lima.sale()]
-    document.write('<ul>' +Lima.workinghours[i]+larr+' cookies.'+'</ul>');
-    i++
+    larr=[Lima.sale()]
+    document.write('<ul>' +Lima.workinghours[d]+larr+' cookies.'+'</ul>');
+    d++
 };
 
