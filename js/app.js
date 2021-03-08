@@ -1,131 +1,134 @@
 'use srtict';
 
 let main= document.getElementById('salmon');
-
 let i=0;
+let header='';
+let workinghours=['','6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm'];
+let totalarr=[];
 
-let Seattle={
-    mincust:23,
-    maxcust:65,
-    avgcookiessale:6.3,
-    workinghours:['6am:','7am:','8am:','9am:','10am:','11am:','12pm:','1pm:','2pm:','3pm:','4pm:','5pm:','6pm:','7pm:',],
-    sale:function getRandomInt(min, max) {
-        min = Math.ceil(min);
-        max = Math.floor(max);
-        return Math.floor(Math.random() * (this.maxcust*this.avgcookiessale - this.mincust*this.avgcookiessale) + this.mincust*this.avgcookiessale); 
+for (let r=0;r<1;r++){
+   
+    header+='<tr>';
+    for (let c=0;c<14;c++){
+        header+= '<th>'+workinghours[c]+'</th>'
     }
-      
+    header+='</tr>';
+
+    
 }
 
-document.write('<h3>Seattle</h3>');
 
+
+function Cookies(mincust,maxcust,avgcookiessale){
+    this.mincust=mincust;
+    this.maxcust=maxcust;
+    this.avgcookiessale=avgcookiessale;
+    this.sale=function getRandomInt(min, max) {
+                min = Math.ceil(min);
+                max = Math.floor(max);
+                return Math.floor(Math.random() * (this.maxcust*this.avgcookiessale - this.mincust*this.avgcookiessale) + this.mincust*this.avgcookiessale); 
+            }
+}
+
+let seattle= new Cookies(23,65,6.3);
+
+let arr=[];
 while ( i < 14) {
-    let arr=[];
-    Seattle.sale();
-    arr=[Seattle.sale()]
-    document.write('<ul>' +Seattle.workinghours[i]+arr+' cookies.'+'</ul>');
-
+    
+    seattle.sale();
+    arr=['Seattle ',seattle.sale(),seattle.sale(),seattle.sale(),seattle.sale(),seattle.sale(),seattle.sale(),seattle.sale(),seattle.sale(),seattle.sale(),seattle.sale(),seattle.sale(),seattle.sale(),seattle.sale(),seattle.sale()];
+   
+    
+    
     i++
 };
 
+console.log(totalarr);
 
-
-document.write('<h3>Tokyo</h3>');
-
-
-let Tokyo={
-    mincust:3,
-    maxcust:24,
-    avgcookiessale:1.2,
-    workinghours:['6am:','7am:','8am:','9am:','10am:','11am:','12pm:','1pm:','2pm:','3pm:','4pm:','5pm:','6pm:','7pm:'],
-    sale:function getRandomInt(min, max) {
-        min = Math.ceil(min);
-        max = Math.floor(max);
-        return Math.floor(Math.random() * (this.maxcust*this.avgcookiessale - this.mincust*this.avgcookiessale) + this.mincust*this.avgcookiessale); 
+for (let r=0;r<1;r++){
+    header+='<tr>';
+    for (let c=0;c<14;c++){
+        header+= '<td>'+arr[c]+'</td>'
+        
     }
-
+    header+='</tr>';
+    
 }
+
+
+
+   
+   
+
+let tokyo= new Cookies(3,24,1.2);
 let a=0;
+let tarr='';
 while ( a< 14) {
-    let tarr=[];
-    Tokyo.sale();
-    tarr=[Tokyo.sale()]
-    document.write('<ul>' +Tokyo.workinghours[a]+tarr+' cookies.'+'</ul>');
+    tarr=['Tokyo ',tokyo.sale(),tokyo.sale(),tokyo.sale(),tokyo.sale(),tokyo.sale(),tokyo.sale(),tokyo.sale(),tokyo.sale(),tokyo.sale(),tokyo.sale(),tokyo.sale(),tokyo.sale(),tokyo.sale(),tokyo.sale()];
+    
     a++
 };
-
-document.write('<h3>Dubai</h3>');
-
-let Dubai={
-    branchname:'dubai',
-    mincust:11,
-    maxcust:38,
-    avgcookiessale:3.7,
-    workinghours:['6am:','7am:','8am:','9am:','10am:','11am:','12pm:','1pm:','2pm:','3pm:','4pm:','5pm:','6pm:','7pm:'],
-    sale:function getRandomInt(min, max) {
-        min = Math.ceil(min);
-        max = Math.floor(max);
-        return Math.floor(Math.random() * (this.maxcust*this.avgcookiessale- this.mincust*this.avgcookiessale) + this.mincust*this.avgcookiessale); 
+console.log(totalarr);
+for (let r=0;r<1;r++){
+    header+='<tr>';
+    for (let c=0;c<14;c++){
+        header+= '<td>'+tarr[c]+'</td>'
     }
+    header+='</tr>';
 
 }
-let b=0
-while ( b < 14) {
-    let darr=[];
-    Tokyo.sale();
-    darr=[Dubai.sale()]
-    document.write('<ul>' +Dubai.workinghours[b]+darr+' cookies.'+'</ul>');
 
+
+
+let dubai= new Cookies(11,38,3.7);
+let b=0
+let darr='';
+while ( b < 14) {
+    darr=['Dubai ',dubai.sale(),dubai.sale(),dubai.sale(),dubai.sale(),dubai.sale(),dubai.sale(),dubai.sale(),dubai.sale(),dubai.sale(),dubai.sale(),dubai.sale(),dubai.sale(),dubai.sale(),dubai.sale()];
     b++
 };
-
-
-document.write('<h3>Paris</h3>');
-let Paris={
-    branchname:'paris',
-    mincust:20,
-    maxcust:38,
-    avgcookiessale:2.3,
-    workinghours:['6am:','7am:','8am:','9am:','10am:','11am:','12pm:','1pm:','2pm:','3pm:','4pm:','5pm:','6pm:','7pm:'],
-    sale:function getRandomInt(min, max) {
-        min = Math.ceil(min);
-        max = Math.floor(max);
-        return Math.floor(Math.random() * (this.maxcust*this.avgcookiessale - this.mincust*this.avgcookiessale) + this.mincust*this.avgcookiessale); 
+for (let r=0;r<1;r++){
+    header+='<tr>';
+    for (let c=0;c<14;c++){
+        header+= '<td>'+darr[c]+'</td>'
     }
+    header+='</tr>';
 
 }
+
+
+let paris=new Cookies(20,38,2.3);
 let c=0
+let parr='';
 while ( c < 14) {
-    let parr=[];
-    Paris.sale();
-    parr=[Paris.sale()]
-    document.write('<ul>' +Paris.workinghours[c]+parr+' cookies.'+'</ul>');
-    console.log(Paris.workinghours[i]);
+    parr=['Paris ',paris.sale(),paris.sale(),paris.sale(),paris.sale(),paris.sale(),paris.sale(),paris.sale(),paris.sale(),paris.sale(),paris.sale(),paris.sale(),paris.sale(),paris.sale(),paris.sale()];
     c++
 };
-
-
-document.write('<h3>Lima</h3>');
-
-let Lima={
-    branchname:'lima',
-    mincust:2,
-    maxcust:16,
-    avgcookiessale:4.6,
-    workinghours:['6am:','7am:','8am:','9am:','10am:','11am:','12pm:','1pm:','2pm:','3pm:','4pm:','5pm:','6pm:','7pm:'],
-    sale:function getRandomInt(min, max) {
-        min = Math.ceil(min);
-        max = Math.floor(max);
-        return Math.floor(Math.random() * (this.maxcust*this.avgcookiessale - this.mincust*this.avgcookiessale) + this.mincust*this.avgcookiessale); 
+for (let r=0;r<1;r++){
+    header+='<tr>';
+    for (let c=0;c<14;c++){
+        header+= '<td>'+parr[c]+'</td>'
     }
+    header+='</tr>';
 
 }
+
+
+let lima=new Cookies(2,16,4.6);
 let d=0
+let larr='';
 while ( d< 14) {
-    let larr=[];
-    Lima.sale();
-    larr=[Lima.sale()]
-    document.write('<ul>' +Lima.workinghours[d]+larr+' cookies.'+'</ul>');
+
+    larr=['Lima ',lima.sale(),lima.sale(),lima.sale(),lima.sale(),lima.sale(),lima.sale(),lima.sale(),lima.sale(),lima.sale(),lima.sale(),lima.sale(),lima.sale(),lima.sale(),lima.sale()];
     d++
 };
+for (let r=0;r<1;r++){
+    header+='<tr>';
+    for (let c=0;c<14;c++){
+        header+= '<td>'+larr[c]+'</td>'
+    }
+    header+='</tr>';
 
+}
+
+document.write('<table>'+header+'</table>');

@@ -69,3 +69,7 @@ h3{
 ul.a{
     list-style-type: square;
 }
+table,th,td{
+
+    border: 1px solid black;
+}
