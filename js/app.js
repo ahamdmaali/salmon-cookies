@@ -1,131 +1,144 @@
 'use srtict';
 
 let main= document.getElementById('salmon');
-
 let i=0;
+let table='';
+let workinghours=['','6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm'];
 
-let Seattle={
-    mincust:23,
-    maxcust:65,
-    avgcookiessale:6.3,
-    workinghours:['6am:','7am:','8am:','9am:','10am:','11am:','12pm:','1pm:','2pm:','3pm:','4pm:','5pm:','6pm:','7pm:',],
-    sale:function getRandomInt(min, max) {
-        min = Math.ceil(min);
-        max = Math.floor(max);
-        return Math.floor(Math.random() * (this.maxcust*this.avgcookiessale - this.mincust*this.avgcookiessale) + this.mincust*this.avgcookiessale); 
+
+for (let r=0;r<1;r++){
+   
+    table+='<tr>';
+    for (let c=0;c<15;c++){
+        table+= '<th>'+workinghours[c]+'</th>'
     }
-      
+    table+='</tr>';
+
+    
 }
 
-document.write('<h3>Seattle</h3>');
 
+
+function Cookies(mincust,maxcust,avgcookiessale){
+    this.mincust=mincust;
+    this.maxcust=maxcust;
+    this.avgcookiessale=avgcookiessale;
+    this.sale=function getRandomInt(min, max) {
+                min = Math.ceil(min);
+                max = Math.floor(max);
+                return Math.floor(Math.random() * (this.maxcust*this.avgcookiessale - this.mincust*this.avgcookiessale) + this.mincust*this.avgcookiessale); 
+            }
+}
+
+let seattle= new Cookies(23,65,6.3);
+
+let arr=[];
 while ( i < 14) {
-    let arr=[];
-    Seattle.sale();
-    arr=[Seattle.sale()]
-    document.write('<ul>' +Seattle.workinghours[i]+arr+' cookies.'+'</ul>');
-
+    
+    seattle.sale();
+    arr=['Seattle ',seattle.sale(),seattle.sale(),seattle.sale(),seattle.sale(),seattle.sale(),seattle.sale(),seattle.sale(),seattle.sale(),seattle.sale(),seattle.sale(),seattle.sale(),seattle.sale(),seattle.sale(),seattle.sale()];
+   
+    
+    
     i++
 };
 
 
 
-document.write('<h3>Tokyo</h3>');
-
-
-let Tokyo={
-    mincust:3,
-    maxcust:24,
-    avgcookiessale:1.2,
-    workinghours:['6am:','7am:','8am:','9am:','10am:','11am:','12pm:','1pm:','2pm:','3pm:','4pm:','5pm:','6pm:','7pm:'],
-    sale:function getRandomInt(min, max) {
-        min = Math.ceil(min);
-        max = Math.floor(max);
-        return Math.floor(Math.random() * (this.maxcust*this.avgcookiessale - this.mincust*this.avgcookiessale) + this.mincust*this.avgcookiessale); 
+for (let r=0;r<1;r++){
+    table+='<tr>';
+    for (let c=0;c<15;c++){
+        table+= '<td>'+arr[c]+'</td>'
+        
     }
-
+    table+='</tr>';
+    
 }
+
+
+
+   
+   
+
+let tokyo= new Cookies(3,24,1.2);
 let a=0;
+let tarr='';
 while ( a< 14) {
-    let tarr=[];
-    Tokyo.sale();
-    tarr=[Tokyo.sale()]
-    document.write('<ul>' +Tokyo.workinghours[a]+tarr+' cookies.'+'</ul>');
+    tarr=['Tokyo ',tokyo.sale(),tokyo.sale(),tokyo.sale(),tokyo.sale(),tokyo.sale(),tokyo.sale(),tokyo.sale(),tokyo.sale(),tokyo.sale(),tokyo.sale(),tokyo.sale(),tokyo.sale(),tokyo.sale(),tokyo.sale()];
+    
     a++
 };
 
-document.write('<h3>Dubai</h3>');
-
-let Dubai={
-    branchname:'dubai',
-    mincust:11,
-    maxcust:38,
-    avgcookiessale:3.7,
-    workinghours:['6am:','7am:','8am:','9am:','10am:','11am:','12pm:','1pm:','2pm:','3pm:','4pm:','5pm:','6pm:','7pm:'],
-    sale:function getRandomInt(min, max) {
-        min = Math.ceil(min);
-        max = Math.floor(max);
-        return Math.floor(Math.random() * (this.maxcust*this.avgcookiessale- this.mincust*this.avgcookiessale) + this.mincust*this.avgcookiessale); 
+for (let r=0;r<1;r++){
+    table+='<tr>';
+    for (let c=0;c<15;c++){
+        table+= '<td>'+tarr[c]+'</td>'
     }
+    table+='</tr>';
 
 }
-let b=0
-while ( b < 14) {
-    let darr=[];
-    Tokyo.sale();
-    darr=[Dubai.sale()]
-    document.write('<ul>' +Dubai.workinghours[b]+darr+' cookies.'+'</ul>');
 
+
+
+let dubai= new Cookies(11,38,3.7);
+let b=0
+let darr='';
+while ( b < 14) {
+    darr=['Dubai ',dubai.sale(),dubai.sale(),dubai.sale(),dubai.sale(),dubai.sale(),dubai.sale(),dubai.sale(),dubai.sale(),dubai.sale(),dubai.sale(),dubai.sale(),dubai.sale(),dubai.sale(),dubai.sale()];
     b++
 };
-
-
-document.write('<h3>Paris</h3>');
-let Paris={
-    branchname:'paris',
-    mincust:20,
-    maxcust:38,
-    avgcookiessale:2.3,
-    workinghours:['6am:','7am:','8am:','9am:','10am:','11am:','12pm:','1pm:','2pm:','3pm:','4pm:','5pm:','6pm:','7pm:'],
-    sale:function getRandomInt(min, max) {
-        min = Math.ceil(min);
-        max = Math.floor(max);
-        return Math.floor(Math.random() * (this.maxcust*this.avgcookiessale - this.mincust*this.avgcookiessale) + this.mincust*this.avgcookiessale); 
+for (let r=0;r<1;r++){
+    table+='<tr>';
+    for (let c=0;c<15;c++){
+        table+= '<td>'+darr[c]+'</td>'
     }
+    table+='</tr>';
 
 }
+
+
+let paris=new Cookies(20,38,2.3);
 let c=0
+let parr='';
 while ( c < 14) {
-    let parr=[];
-    Paris.sale();
-    parr=[Paris.sale()]
-    document.write('<ul>' +Paris.workinghours[c]+parr+' cookies.'+'</ul>');
-    console.log(Paris.workinghours[i]);
+    parr=['Paris',paris.sale(),paris.sale(),paris.sale(),paris.sale(),paris.sale(),paris.sale(),paris.sale(),paris.sale(),paris.sale(),paris.sale(),paris.sale(),paris.sale(),paris.sale(),paris.sale()];
     c++
 };
-
-
-document.write('<h3>Lima</h3>');
-
-let Lima={
-    branchname:'lima',
-    mincust:2,
-    maxcust:16,
-    avgcookiessale:4.6,
-    workinghours:['6am:','7am:','8am:','9am:','10am:','11am:','12pm:','1pm:','2pm:','3pm:','4pm:','5pm:','6pm:','7pm:'],
-    sale:function getRandomInt(min, max) {
-        min = Math.ceil(min);
-        max = Math.floor(max);
-        return Math.floor(Math.random() * (this.maxcust*this.avgcookiessale - this.mincust*this.avgcookiessale) + this.mincust*this.avgcookiessale); 
+for (let r=0;r<1;r++){
+    table+='<tr>';
+    for (let c=0;c<15;c++){
+        table+= '<td>'+parr[c]+'</td>'
     }
+    table+='</tr>';
 
 }
+
+
+let lima=new Cookies(2,16,4.6);
 let d=0
+let larr='';
 while ( d< 14) {
-    let larr=[];
-    Lima.sale();
-    larr=[Lima.sale()]
-    document.write('<ul>' +Lima.workinghours[d]+larr+' cookies.'+'</ul>');
+
+    larr=['Lima',lima.sale(),lima.sale(),lima.sale(),lima.sale(),lima.sale(),lima.sale(),lima.sale(),lima.sale(),lima.sale(),lima.sale(),lima.sale(),lima.sale(),lima.sale(),lima.sale()];
     d++
 };
+for (let r=0;r<1;r++){
+    table+='<tr>';
+    for (let c=0;c<15;c++){
+        table+= '<td>'+larr[c]+'</td>'
+    }
+    table+='</tr>';
 
+}
+let totalarr=['Total',arr[1]+tarr[1]+parr[1]+darr[1]+larr[1],arr[2]+tarr[2]+parr[2]+darr[2]+larr[2],arr[3]+tarr[3]+parr[3]+darr[3]+larr[3],arr[4]+tarr[4]+parr[4]+darr[4]+larr[4],arr[5]+tarr[5]+parr[5]+darr[5]+larr[5],arr[6]+tarr[6]+parr[6]+darr[6]+larr[6],arr[7]+tarr[7]+parr[7]+darr[7]+larr[7],arr[8]+tarr[8]+parr[8]+darr[8]+larr[8],arr[9]+tarr[9]+parr[9]+darr[9]+larr[9],arr[10]+tarr[10]+parr[10]+darr[10]+larr[10],arr[11]+tarr[11]+parr[11]+darr[11]+larr[11],arr[12]+tarr[12]+parr[12]+darr[12]+larr[12],arr[13]+tarr[13]+parr[13]+darr[13]+larr[13],arr[14]+tarr[14]+parr[14]+darr[14]+larr[14]];
+for (let r=0;r<1;r++){
+   
+    table+='<tr>';
+    for (let c=0;c<15;c++){
+        table+= '<th>'+totalarr[c]+'</th>'
+    }
+    table+='</tr>';
+
+    
+};
+document.write('<table>'+table+'</table>');
