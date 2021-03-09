@@ -4,12 +4,12 @@ let main= document.getElementById('salmon');
 let i=0;
 let header='';
 let workinghours=['','6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm'];
-let totalarr=[];
+
 
 for (let r=0;r<1;r++){
    
     header+='<tr>';
-    for (let c=0;c<14;c++){
+    for (let c=0;c<15;c++){
         header+= '<th>'+workinghours[c]+'</th>'
     }
     header+='</tr>';
@@ -43,11 +43,11 @@ while ( i < 14) {
     i++
 };
 
-console.log(totalarr);
+
 
 for (let r=0;r<1;r++){
     header+='<tr>';
-    for (let c=0;c<14;c++){
+    for (let c=0;c<15;c++){
         header+= '<td>'+arr[c]+'</td>'
         
     }
@@ -68,10 +68,10 @@ while ( a< 14) {
     
     a++
 };
-console.log(totalarr);
+
 for (let r=0;r<1;r++){
     header+='<tr>';
-    for (let c=0;c<14;c++){
+    for (let c=0;c<15;c++){
         header+= '<td>'+tarr[c]+'</td>'
     }
     header+='</tr>';
@@ -89,7 +89,7 @@ while ( b < 14) {
 };
 for (let r=0;r<1;r++){
     header+='<tr>';
-    for (let c=0;c<14;c++){
+    for (let c=0;c<15;c++){
         header+= '<td>'+darr[c]+'</td>'
     }
     header+='</tr>';
@@ -101,12 +101,12 @@ let paris=new Cookies(20,38,2.3);
 let c=0
 let parr='';
 while ( c < 14) {
-    parr=['Paris ',paris.sale(),paris.sale(),paris.sale(),paris.sale(),paris.sale(),paris.sale(),paris.sale(),paris.sale(),paris.sale(),paris.sale(),paris.sale(),paris.sale(),paris.sale(),paris.sale()];
+    parr=['Paris',paris.sale(),paris.sale(),paris.sale(),paris.sale(),paris.sale(),paris.sale(),paris.sale(),paris.sale(),paris.sale(),paris.sale(),paris.sale(),paris.sale(),paris.sale(),paris.sale()];
     c++
 };
 for (let r=0;r<1;r++){
     header+='<tr>';
-    for (let c=0;c<14;c++){
+    for (let c=0;c<15;c++){
         header+= '<td>'+parr[c]+'</td>'
     }
     header+='</tr>';
@@ -119,16 +119,26 @@ let d=0
 let larr='';
 while ( d< 14) {
 
-    larr=['Lima ',lima.sale(),lima.sale(),lima.sale(),lima.sale(),lima.sale(),lima.sale(),lima.sale(),lima.sale(),lima.sale(),lima.sale(),lima.sale(),lima.sale(),lima.sale(),lima.sale()];
+    larr=['Lima',lima.sale(),lima.sale(),lima.sale(),lima.sale(),lima.sale(),lima.sale(),lima.sale(),lima.sale(),lima.sale(),lima.sale(),lima.sale(),lima.sale(),lima.sale(),lima.sale()];
     d++
 };
 for (let r=0;r<1;r++){
     header+='<tr>';
-    for (let c=0;c<14;c++){
+    for (let c=0;c<15;c++){
         header+= '<td>'+larr[c]+'</td>'
     }
     header+='</tr>';
 
 }
+let totalarr=['Total',arr[1]+tarr[1]+parr[1]+darr[1]+larr[1],arr[2]+tarr[2]+parr[2]+darr[2]+larr[2],arr[3]+tarr[3]+parr[3]+darr[3]+larr[3],arr[4]+tarr[4]+parr[4]+darr[4]+larr[4],arr[5]+tarr[5]+parr[5]+darr[5]+larr[5],arr[6]+tarr[6]+parr[6]+darr[6]+larr[6],arr[7]+tarr[7]+parr[7]+darr[7]+larr[7],arr[8]+tarr[8]+parr[8]+darr[8]+larr[8],arr[9]+tarr[9]+parr[9]+darr[9]+larr[9],arr[10]+tarr[10]+parr[10]+darr[10]+larr[10],arr[11]+tarr[11]+parr[11]+darr[11]+larr[11],arr[12]+tarr[12]+parr[12]+darr[12]+larr[12],arr[13]+tarr[13]+parr[13]+darr[13]+larr[13],arr[14]+tarr[14]+parr[14]+darr[14]+larr[14]];
+for (let r=0;r<1;r++){
+   
+    header+='<tr>';
+    for (let c=0;c<15;c++){
+        header+= '<th>'+totalarr[c]+'</th>'
+    }
+    header+='</tr>';
 
+    
+};
 document.write('<table>'+header+'</table>');
