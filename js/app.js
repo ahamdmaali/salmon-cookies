@@ -1,25 +1,29 @@
 'use srtict';
 
-let main= document.getElementById('salmon');
-let i=0;
-let table='';
-let workinghours=['','6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm'];
 
+let workinghours=['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm'];
 
-for (let r=0;r<1;r++){
-   
-    table+='<tr>';
-    for (let c=0;c<15;c++){
-        table+= '<th>'+workinghours[c]+'</th>'
-    }
-    table+='</tr>';
-
+    let table= document.getElementById('table');
+    let tablehaed= document.createElement('th');
+    table.appendChild(tablehaed)
+    let tablerow= document.createElement('tr');
+    tablehaed.appendChild(tablerow);
+    let tabledata= document.createElement('td');
+    tablehaed.appendChild(tabledata)
     
+    for(let i=0; i<16;i++){
+    tabledata=document.createElement('td')
+    tabledata.textContent= workinghours[i];
+    tablehaed.appendChild(tabledata);
+   
 }
 
+tabledata.textContent='Daily lacation total';
 
 
-function Cookies(mincust,maxcust,avgcookiessale){
+
+function Cookies(location,mincust,maxcust,avgcookiessale){
+    this.location=location;
     this.mincust=mincust;
     this.maxcust=maxcust;
     this.avgcookiessale=avgcookiessale;
@@ -29,116 +33,102 @@ function Cookies(mincust,maxcust,avgcookiessale){
                 return Math.floor(Math.random() * (this.maxcust*this.avgcookiessale - this.mincust*this.avgcookiessale) + this.mincust*this.avgcookiessale); 
             }
 }
+function Table(location,array,total){
+    this.location=location;
+    this.array=array
+    this.total=total
+    let row= document.createElement('tr');
+    tablehaed.appendChild(row);
+    let data= document.createElement('td');
+    row.appendChild(data)
+    data.textContent=location;
 
-let seattle= new Cookies(23,65,6.3);
-
-let arr=[];
-while ( i < 14) {
-    
-    seattle.sale();
-    arr=['Seattle ',seattle.sale(),seattle.sale(),seattle.sale(),seattle.sale(),seattle.sale(),seattle.sale(),seattle.sale(),seattle.sale(),seattle.sale(),seattle.sale(),seattle.sale(),seattle.sale(),seattle.sale(),seattle.sale()];
+for(let i=0; i<16;i++){
+    data=document.createElement('td')
+    data.textContent= array[i];
+    row.appendChild(data);
    
-    
-    
-    i++
-};
-
-
-
-for (let r=0;r<1;r++){
-    table+='<tr>';
-    for (let c=0;c<15;c++){
-        table+= '<td>'+arr[c]+'</td>'
-        
-    }
-    table+='</tr>';
-    
 }
 
-
-
-   
-   
-
-let tokyo= new Cookies(3,24,1.2);
-let a=0;
-let tarr='';
-while ( a< 14) {
-    tarr=['Tokyo ',tokyo.sale(),tokyo.sale(),tokyo.sale(),tokyo.sale(),tokyo.sale(),tokyo.sale(),tokyo.sale(),tokyo.sale(),tokyo.sale(),tokyo.sale(),tokyo.sale(),tokyo.sale(),tokyo.sale(),tokyo.sale()];
-    
-    a++
-};
-
-for (let r=0;r<1;r++){
-    table+='<tr>';
-    for (let c=0;c<15;c++){
-        table+= '<td>'+tarr[c]+'</td>'
-    }
-    table+='</tr>';
-
+data.textContent=total;
 }
+let seattle= new Cookies('seattle',23,65,6.3);
 
+let seattlecookies=[];
+let seattlesum=0;
+let totalseatle=0;
 
+for( let i=0; i<14;i++) {
+    seattlecookies.push(seattle.sale())
+    totalseatle+=seattlecookies[i]
 
-let dubai= new Cookies(11,38,3.7);
-let b=0
-let darr='';
-while ( b < 14) {
-    darr=['Dubai ',dubai.sale(),dubai.sale(),dubai.sale(),dubai.sale(),dubai.sale(),dubai.sale(),dubai.sale(),dubai.sale(),dubai.sale(),dubai.sale(),dubai.sale(),dubai.sale(),dubai.sale(),dubai.sale()];
-    b++
 };
-for (let r=0;r<1;r++){
-    table+='<tr>';
-    for (let c=0;c<15;c++){
-        table+= '<td>'+darr[c]+'</td>'
-    }
-    table+='</tr>';
 
+let seattlerow= new Table('Seattle',seattlecookies,totalseatle);
+
+let tokyo= new Cookies('Tokyo',3,24,1.2);
+let tokyocokies=[];
+let totaltokyo=0;
+for ( let i=0;i<14;i++) {
+    tokyocokies.push(tokyo.sale())
+    totaltokyo+=tokyocokies[i];
+};
+let tokyorow= new Table('Tokyo',tokyocokies,totaltokyo);
+
+let dubai= new Cookies('Dubai',11,38,3.7);
+let dubaicookies=[];
+let totaldubai=0;
+for ( let i=0;i<14;i++) {
+    dubaicookies.push(dubai.sale())
+    totaldubai+=dubaicookies[i];
+};
+let dubairow= new Table('Dubai',dubaicookies,totaldubai);
+
+let paris=new Cookies('Paris',20,38,2.3);
+let pariscookies=[];
+let totalparis=0;
+for ( let i=0;i<14;i++) {
+    pariscookies.push(paris.sale())
+    totalparis+=pariscookies[i];
+};
+let Parisrow= new Table('Paris',pariscookies,totalparis);
+
+
+let lima=new Cookies('Lima',2,16,4.6);
+let limacookies=[];
+let totallima=0;
+for ( let i=0;i<14;i++) {
+    limacookies.push(lima.sale())
+    totallima+=limacookies[i];
+};
+let limarow= new Table('Lima',limacookies,totallima);
+
+let totalhours=[];
+for (let i=0;i<14;i++){
+    let total=[seattlecookies[i]+tokyocokies[i]+dubaicookies[i]+pariscookies[i]+limacookies[i]];
+    totalhours.push(total);
 }
+let newrow= new Table('Total',totalhours);
 
 
-let paris=new Cookies(20,38,2.3);
-let c=0
-let parr='';
-while ( c < 14) {
-    parr=['Paris',paris.sale(),paris.sale(),paris.sale(),paris.sale(),paris.sale(),paris.sale(),paris.sale(),paris.sale(),paris.sale(),paris.sale(),paris.sale(),paris.sale(),paris.sale(),paris.sale()];
-    c++
+
+let form = document.getElementById('salmoncookies')
+
+form.addEventListener("submit", function(event){
+    event.preventDefault();
+  let location= event.target.name.value;
+  let avgcookiessale =event.target.avgcookiessale.value;
+  let maxcustomers= event.target.maxcustomers.value;
+  let mincustomers = event.target.mincustomers.value; 
+  let newlocation = new Cookies(location,mincustomers,maxcustomers,avgcookiessale);
+  let newcookies=[];
+  let newtotal=0;
+for ( let i=0;i<14;i++) {
+    newcookies.push(newlocation.sale())
+    newtotal+=newcookies[i];
 };
-for (let r=0;r<1;r++){
-    table+='<tr>';
-    for (let c=0;c<15;c++){
-        table+= '<td>'+parr[c]+'</td>'
-    }
-    table+='</tr>';
-
-}
+let newrow= new Table(location,newcookies,newtotal);
 
 
-let lima=new Cookies(2,16,4.6);
-let d=0
-let larr='';
-while ( d< 14) {
-
-    larr=['Lima',lima.sale(),lima.sale(),lima.sale(),lima.sale(),lima.sale(),lima.sale(),lima.sale(),lima.sale(),lima.sale(),lima.sale(),lima.sale(),lima.sale(),lima.sale(),lima.sale()];
-    d++
-};
-for (let r=0;r<1;r++){
-    table+='<tr>';
-    for (let c=0;c<15;c++){
-        table+= '<td>'+larr[c]+'</td>'
-    }
-    table+='</tr>';
-
-}
-let totalarr=['Total',arr[1]+tarr[1]+parr[1]+darr[1]+larr[1],arr[2]+tarr[2]+parr[2]+darr[2]+larr[2],arr[3]+tarr[3]+parr[3]+darr[3]+larr[3],arr[4]+tarr[4]+parr[4]+darr[4]+larr[4],arr[5]+tarr[5]+parr[5]+darr[5]+larr[5],arr[6]+tarr[6]+parr[6]+darr[6]+larr[6],arr[7]+tarr[7]+parr[7]+darr[7]+larr[7],arr[8]+tarr[8]+parr[8]+darr[8]+larr[8],arr[9]+tarr[9]+parr[9]+darr[9]+larr[9],arr[10]+tarr[10]+parr[10]+darr[10]+larr[10],arr[11]+tarr[11]+parr[11]+darr[11]+larr[11],arr[12]+tarr[12]+parr[12]+darr[12]+larr[12],arr[13]+tarr[13]+parr[13]+darr[13]+larr[13],arr[14]+tarr[14]+parr[14]+darr[14]+larr[14]];
-for (let r=0;r<1;r++){
-   
-    table+='<tr>';
-    for (let c=0;c<15;c++){
-        table+= '<th>'+totalarr[c]+'</th>'
-    }
-    table+='</tr>';
-
-    
-};
-document.write('<table>'+table+'</table>');
+  form.reset();
+})
