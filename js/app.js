@@ -103,16 +103,8 @@ for ( let i=0;i<14;i++) {
 };
 let limarow= new Table('Lima',limacookies,totallima);
 
-let totalhours=[];
-for (let i=0;i<14;i++){
-    let total=[seattlecookies[i]+tokyocokies[i]+dubaicookies[i]+pariscookies[i]+limacookies[i]];
-    totalhours.push(total);
-}
-let newrow= new Table('Total',totalhours);
-
-
-
 let form = document.getElementById('salmoncookies')
+
 
 form.addEventListener("submit", function(event){
     event.preventDefault();
@@ -123,12 +115,26 @@ form.addEventListener("submit", function(event){
   let newlocation = new Cookies(location,mincustomers,maxcustomers,avgcookiessale);
   let newcookies=[];
   let newtotal=0;
-for ( let i=0;i<14;i++) {
+ for ( let i=0;i<14;i++) {
     newcookies.push(newlocation.sale())
     newtotal+=newcookies[i];
-};
-let newrow= new Table(location,newcookies,newtotal);
+}
+  let newrow= new Table(location,newcookies,newtotal);
 
-
+ 
   form.reset();
-})
+});
+
+let totalhours=[];
+let totaltotal=0;
+for (let i=0;i<14;i++){
+    let total=parseInt([seattlecookies[i]+tokyocokies[i]+dubaicookies[i]+pariscookies[i]+limacookies[i]]);
+    totalhours.push(total);
+    totaltotal+=total;
+
+}
+let totalrow= new Table('Total',totalhours,totaltotal);
+
+
+
+
