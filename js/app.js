@@ -154,12 +154,21 @@ for (let i=0;i<14;i++){
     totaltotal+=total;
 
 }
-let totalrow= new Footer('Total',totalhours,totaltotal);
+let totalrow= new Footer('NewTotal',totalhours,totaltotal);
    }
     
 }
 
+let totalhours=[];
+let totaltotal=0;
+for (let i=0;i<14;i++){
+    let total=parseInt([seattlecookies[i]+tokyocokies[i]+dubaicookies[i]+pariscookies[i]+limacookies[i]]);
+    totalhours.push(total);
+    totaltotal+=total;
 
+}
+let totalrow= new Footer('Total',totalhours,totaltotal);
+   
 
 
     
