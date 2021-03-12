@@ -5,8 +5,9 @@ let workinghours=['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm'
 
     let table= document.getElementById('table');
     let tablehaed= document.createElement('th');
-    table.appendChild(tablehaed)
+    
     let tablerow= document.createElement('tr');
+    table.appendChild(tablehaed)
     tablehaed.appendChild(tablerow);
     let tabledata= document.createElement('td');
     tablehaed.appendChild(tabledata)
@@ -103,26 +104,6 @@ for ( let i=0;i<14;i++) {
 };
 let limarow= new Table('Lima',limacookies,totallima);
 
-
-function Footer(location,array,total){
-    this.location=location;
-    this.array=array
-    this.total=total
-    let row= document.createElement('tr');
-    tablehaed.appendChild(row);
-    let data= document.createElement('td');
-    row.appendChild(data)
-    data.textContent=location;
-
-for(let i=0; i<16;i++){
-    data=document.createElement('td')
-    data.textContent= array[i];
-    row.appendChild(data);
-   
-}
-
-data.textContent=total;
-}
 let form = document.getElementById('salmoncookies')
 
 
@@ -145,7 +126,14 @@ function datahandler(event){
       newcookies.push(newlocation.sale());
       newtotal+=newcookies[i];
     }
+    
     let newrow= new Table(location,newcookies,newtotal);
+    
+
+    
+
+
+    
     let totalhours=[];
 let totaltotal=0;
 for (let i=0;i<14;i++){
@@ -154,10 +142,32 @@ for (let i=0;i<14;i++){
     totaltotal+=total;
 
 }
-let totalrow= new Footer('NewTotal',totalhours,totaltotal);
+   let totalrow= new Footer('NewTotal',totalhours,totaltotal);
    }
     
 }
+
+let row='';
+function Footer(location,array,total){
+    this.location=location;
+    this.array=array
+    this.total=total
+    let row= document.createElement('tr');
+    tablehaed.appendChild(row);
+    let data= document.createElement('td');
+    row.appendChild(data)
+    data.textContent=location;
+
+for(let i=0; i<16;i++){
+    data=document.createElement('td')
+    data.textContent= array[i];
+    row.appendChild(data);
+   
+}
+
+data.textContent=total;
+}
+
 
 let totalhours=[];
 let totaltotal=0;
@@ -171,7 +181,8 @@ let totalrow= new Footer('Total',totalhours,totaltotal);
    
 
 
-    
+
+
 
 
 

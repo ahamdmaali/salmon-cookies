@@ -84,3 +84,22 @@ input:invalid {
   input:valid {
     border: 2px solid black;
   }
+  form{
+      margin-left: 25%;
+      margin-top: 5%;
+  }
+  table{
+      margin-left: 25%;
+  }
+  table th{
+      color: darkblue;
+  }
+  legend{
+      font-size: 22px;
+      color:blue;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  label{
+      color: blue;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
