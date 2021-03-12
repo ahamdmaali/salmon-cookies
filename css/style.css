@@ -1,5 +1,6 @@
 nav{
     background-color: blue;
+    margin-top: 5px;
 }
 li{
     display: inline-block;
@@ -24,48 +25,51 @@ h1{
     text-align: center;
     border: 1px solid black;
     box-sizing: border-box;
-    margin: 25px 50px;
+    
     background-color:burlywood;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-p{
-    font-size: x-large;
-    font-style: inherit;
-    text-align: center;
-    position: sticky;
-    border: 1px solid black;
-    border: 1px solid black;
-    margin: 25px 50px;
-    background-color: lightblue;
-  
+footer p{
+    display: inline-block;
+    margin: 20px;
+    font-size: large;
+    font-weight: bolder;
+    color: black;
+    text-decoration: black;
+    
 }
 img{
     float: inline-start;
-    border-radius: 20%;
+    border-style: solid;
     height: 250px;
     width: 250px;
+    border-image-outset: 50px;
 
 }
-h2{
+main h2{
     text-align: center;
     border: 1px solid black;
-    margin: 25px 50px;
+    margin-left: 280px;
+    margin-right: 25%;
+    margin-top: 10px;
     background-color:burlywood;
     clear: left;
     font-family: Georgia, 'Times New Roman', Times, serif;
     
     
 }
-body{
+ body{
     background-color: lightskyblue
 }
 h3{
-    text-align: center;
-    position: relative;
-    background-color: chartreuse;
-    display: ruby;
-    background-size: initial;
+    display: inline-block;
+    
+    font-size: large;
+    font-weight: bolder;
+    color: black;
+    text-decoration: black;
 }
+    
 ul.a{
     list-style-type: square;
 }
@@ -102,4 +106,26 @@ input:invalid {
   label{
       color: blue;
       font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  #salmonlogo{
+    float: inline-start;
+    border-radius: 20%;
+    height: 150px;
+    width: 150px;
+    border: saddlebrown;
+    border-style: double;
+  }
+  footer h2{
+      margin-left: 50px;
+      margin-right:600px ;
+      border-block-color: red;
+      border-style:outset;
+      text-align: center;
+  }
+  body footer ul li{
+    border: red;
+    font-size: large;
+    font-weight: bolder;
+    color: black;
+    text-decoration: black;
   }
