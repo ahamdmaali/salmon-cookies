@@ -41,9 +41,10 @@ footer p{
 img{
     float: inline-start;
     border-style: solid;
-    height: 250px;
-    width: 250px;
+    height: 170px;
+    width: 170px;
     border-image-outset: 50px;
+    border-radius: 100px ;
 
 }
 main h2{
@@ -59,7 +60,12 @@ main h2{
     
 }
  body{
-    background-color: lightskyblue
+    background-color: lightskyblue;
+    
+    
+}
+main{
+    margin: 30px;
 }
 h3{
     display: inline-block;
@@ -108,12 +114,13 @@ input:invalid {
       font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   }
   #salmonlogo{
-    float: inline-start;
-    border-radius: 20%;
-    height: 150px;
-    width: 150px;
-    border: saddlebrown;
-    border-style: double;
+    float: left;
+    height: 50px;
+    width: 50px;
+    border-style: none;
+    margin: 4px;
+   
+    
   }
   footer h2{
       margin-left: 50px;
@@ -128,4 +135,4 @@ input:invalid {
     font-weight: bolder;
     color: black;
     text-decoration: black;
-  }
+ 
