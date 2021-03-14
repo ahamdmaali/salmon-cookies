@@ -2,9 +2,9 @@ nav{
     background-color: blue;
     margin-top: 5px;
 }
-li{
+nav ul li{
     display: inline-block;
-    margin: 20px;
+    margin: 30px;
     font-size: large;
     font-weight: bolder;
     color: black;
@@ -115,8 +115,8 @@ input:invalid {
   }
   #salmonlogo{
     float: left;
-    height: 50px;
-    width: 50px;
+    height: 70px;
+    width: 100px;
     border-style: none;
     margin: 4px;
    
@@ -124,7 +124,7 @@ input:invalid {
   }
   footer h2{
       margin-left: 50px;
-      margin-right:600px ;
+      margin-right:350px ;
       border-block-color: red;
       border-style:outset;
       text-align: center;
@@ -135,4 +135,9 @@ input:invalid {
     font-weight: bolder;
     color: black;
     text-decoration: black;
+  float: left;
+  }
+  footer ul{
+      margin-left: 30px;
+  }
  

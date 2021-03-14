@@ -161,7 +161,7 @@ function datahandler(event){
       newcookies.push(newlocation.sale());
       newtotal+=newcookies[i];
     }
-    // tablehaed.removeChild(totalrow);
+    
     let newrow= new Table(location,newcookies,newtotal);
 
     
