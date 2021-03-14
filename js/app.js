@@ -151,6 +151,7 @@ function datahandler(event){
     let avgcookiessale =event.target.avgcookiessale.value;
     let maxcustomers= event.target.maxcustomers.value;
     let mincustomers = event.target.mincustomers.value; 
+    tablehaed.removeChild(tablehaed.lastChild);
    if(location==="" || avgcookiessale==="" || maxcustomers==="" || mincustomers===""){
        alert('Please, fill all data');
    }else{
@@ -163,7 +164,7 @@ function datahandler(event){
     }
     
     let newrow= new Table(location,newcookies,newtotal);
-
+ 
     
 
     
@@ -171,8 +172,8 @@ function datahandler(event){
 
     
     let totalhours=[];
-let totaltotal=0;
-for (let i=0;i<14;i++){
+    let totaltotal=0;
+    for (let i=0;i<14;i++){
     let total=parseInt([seattlecookies[i]+tokyocokies[i]+dubaicookies[i]+pariscookies[i]+limacookies[i]+newcookies[i]]);
     totalhours.push(total);
     totaltotal+=total;
